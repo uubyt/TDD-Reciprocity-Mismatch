@@ -60,25 +60,9 @@ mkdir -p dataset results_e2e saved_models_e2e
 
 ### Dataset Path
 
-Check the dataset path in `config_system.py`. The current path is:
-
-```text
-/home/yt/RF2/dataset/H_UL_norm_0.0dB_0.0deg1.npy
-```
-
+Check the dataset path in `config_system.py`.
 Update this path when the project is stored in another directory.
 
-### GPU Configuration
-
-The scripts currently select the following GPUs:
-
-| Script | GPU |
-|---|---:|
-| `generate_data1.py` | 4 |
-| `train_sa_mult_cal_net.py` | 1 |
-| `run_traditional_link.py` | 5 |
-
-Change `CUDA_VISIBLE_DEVICES` in these scripts according to the available GPUs.
 
 ## 3. Run Commands
 
