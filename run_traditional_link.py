@@ -105,7 +105,7 @@ from channels import (
     add_awgn_to_uplink,
 )
 
-from precoding import build_precoder, normalize_precoder, normalize_precoder_equal_stream
+from precoding import build_precoder, normalize_precoder, normalize_precoder_stream
 from modulation import generate_random_bits, qam4_modulate, qam4_hard_demod
 from receiver import downlink_transmit, mmse_equalize
 from metrics import (
@@ -284,7 +284,7 @@ def mcsgd_precoder(H_UL_est, dl_snr_linear, Ns, mcsgd_pool):
     )
 
     W = W_tf.numpy().astype(np.complex64)
-    return normalize_precoder_equal_stream(W)
+    return normalize_precoder_stream(W)
 
 
 def compute_h_nmse(H_hat, H_true):
@@ -375,7 +375,7 @@ def _generate_nn_calib_svd_precoder(
     nn_calibrator,
 ):
     """
-    NN calibration + SVD equal-power precoding.
+    NN calibration + SVD watering.
 
     H_UL_est -> NN calibrator -> H_DL_hat -> SVD precoder -> W
     """
@@ -520,7 +520,7 @@ def _generate_moe_calib_svd_precoder(
     moe_calibrator,
 ):
     """
-    MoE calibration + SVD equal-power precoding.
+    MoE calibration + SVD watering.
 
     H_UL_est -> MoE calibrator -> H_DL_hat -> SVD precoder -> W
     """
