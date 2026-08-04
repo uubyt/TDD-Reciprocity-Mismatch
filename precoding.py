@@ -78,9 +78,9 @@ def svd_waterfilling_precoder(H, Ns, snr_linear):
     return normalize_precoder(W)
 
 
-def build_precoder(H_prec, Ns, precoder_type="svd_equal_power", snr_linear=None):
-    if precoder_type == "svd_equal_power":
-        return svd_equal_power_precoder(H_prec, Ns)
+def build_precoder(H_prec, Ns, precoder_type="svd_waterfilling", snr_linear=None):
+    if precoder_type == "svd_waterfilling":
+        return svd_power_precoder(H_prec, Ns)
 
     if precoder_type == "svd_waterfilling":
         if snr_linear is None:
