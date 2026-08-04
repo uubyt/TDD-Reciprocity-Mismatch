@@ -6,7 +6,7 @@ def normalize_precoder(W):
     power = np.sum(np.abs(W) ** 2, axis=(1, 2), keepdims=True)
     return (W / np.sqrt(power + 1e-12)).astype(np.complex64)
 
-def normalize_precoder_equal_stream(W):
+def normalize_precoder_stream(W):
     """
     W: [B, Nt, Ns]
     Force each stream/column to have power 1/Ns.
@@ -21,7 +21,7 @@ def normalize_precoder_equal_stream(W):
     return W.astype(np.complex64)
 
 
-def svd_equal_power_precoder(H, Ns):
+def svd_power_precoder(H, Ns):
     """
     H: [B, Nr, Nt]
     return W: [B, Nt, Ns], total power normalized to 1.
