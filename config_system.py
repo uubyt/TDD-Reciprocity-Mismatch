@@ -62,7 +62,7 @@ SNR_CONFIG["dl_snr_linear_list"] = [
 LINK_CONFIG = {
     "num_symbols": 1024,
     "bits_per_symbol": 2,  # 4QAM/QPSK
-    "precoder_type": "svd_equal_power",  # "svd_equal_power" or "svd_waterfilling"
+    "precoder_type": "svd_water_power",  "svd_waterfilling"
     "tx_power": 1.0,
     "seed": 123,
     "bler_block_symbols": 8,
