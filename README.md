@@ -16,7 +16,7 @@
 | `predcalinet_static_calibration.py` | Defines the static PredCaliNet baseline using LSTM and fully connected layers. |
 | `deeprc_cnn_calibration.py` | Defines the DeepRC-inspired CNN calibration baseline. |
 | `deeprc_cnn_runtime.py` | Loads trained DeepRC-CNN weights and performs inference. |
-| `precoding.py` | Implements equal-power SVD precoding, water-filling SVD precoding, and precoder normalization. |
+| `precoding.py` | Implements water-power SVD precoding, water-filling SVD precoding, and precoder normalization. |
 | `modulation.py` | Implements random bit generation, QPSK modulation, and hard-decision QPSK demodulation. |
 | `receiver.py` | Implements downlink transmission with AWGN and MMSE equalization. |
 | `metrics.py` | Computes BER, SER, BLER, EVM, effective spectral efficiency, capacity, channel NMSE, Gram leakage, and post-MMSE SINR. |
